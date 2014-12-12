@@ -1,0 +1,25 @@
+<h1>Listing clinicians</h1>
+
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Password</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @clinicians.each do |clinician| %>
+  <tr>
+    <td><%= clinician.email %></td>
+    <td><%= clinician.password %></td>
+    <td><%= link_to 'Show', clinician %></td>
+    <td><%= link_to 'Edit', edit_clinician_path(clinician) %></td>
+    <td><%= link_to 'Destroy', clinician, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Clinician', new_clinician_path %>
