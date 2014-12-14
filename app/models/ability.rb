@@ -6,9 +6,9 @@ class Ability
     user ||= User.new
     
     if user.clinician?
-      can [:index, :show, :new, :create], Product
+      can :manage, :all
     elsif user.manager?
-     can [:index, :show], Product
+     can :read, :all
     else 
      can  [:index], Product
    end
